@@ -1,0 +1,14 @@
+{
+  "project_name": "FasalRakshak",
+  "status": "All Enhancements & Corrections Completed",
+  "features_updated": [
+    "Clean, unified branding (no dual-use mentions in UI)",
+    "100% Dark Mode & Light Mode adaptive minimalist aesthetic CSS",
+    "Smart Leaf Guard non-plant image rejection system",
+    "Real-time animated leaf scanning progress bar with explicit Analyze button",
+    "Multi-engine audio player (gTTS MP3 + Web Speech) for 100% reliable voice playback",
+    "Added Jharkhand local regional languages (Khortha, Nagpuri/Sadri, Bhojpuri, Hindi, English)",
+    "Real botanical crop leaf photo library in data/sample_leaves",
+    "Independent, isolated reports for NTCC and 1M1B IBM Internship"
+  ]
+}

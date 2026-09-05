@@ -1,0 +1,99 @@
+﻿# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual Environments
+venv/
+.venv/
+.venv*/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Large Datasets & Raw Downloads
+data/plant_village/
+data/_hf_cache/
+*.tar.gz
+*.zip
+*.rar
+*.7z
+
+# Local Scratch Directory (1.7+ GB raw test dumps)
+scratch/
+
+# Temporary Generated Audio Files (keep folder via .gitkeep)
+assets/inworld_audio/*.wav
+assets/inworld_audio/*.mp3
+assets/inworld_audio/*.m4a
+assets/audio/*.wav
+assets/audio/*.mp3
+assets/audio/*.m4a
+!assets/inworld_audio/.gitkeep
+!assets/audio/.gitkeep
+
+# Temporary Generated PDF Prescriptions (keep sample template)
+reports/*.pdf
+!assets/sample_prescription.pdf
+
+# Testing & Linting
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.nox/
+.hypothesis/
+
+# Frontend Build & Node Modules
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+frontend/.vite-temp/
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini

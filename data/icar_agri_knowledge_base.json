@@ -1,0 +1,178 @@
+[
+  {
+    "doc_id": "ICAR-POT-01",
+    "title": "Integrated Management of Potato Late Blight (Phytophthora infestans)",
+    "source": "ICAR - Central Potato Research Institute (CPRI), Shimla, Bulletin No. 68",
+    "target_crops": ["Potato"],
+    "disease_covered": "Potato Late Blight",
+    "disease_class": "Potato___Late_blight",
+    "pathogen": "Phytophthora infestans (Oomycete)",
+    "grounded_content": "Late blight is the most destructive disease of potato. Under high humidity (>85%) and temperature between 12-24°C, sporangia germinate within 2 hours. Preventive spray of Mancozeb 75% WP @ 2.5 g/L or Chlorothalonil 75% WP @ 2.0 g/L must be initiated before canopy closure. Upon appearance of first water-soaked lesions, systemic fungicides such as Cymoxanil 8% + Mancozeb 64% WP @ 2.5 g/L or Dimethomorph 50% WP @ 1.0 g/L or Metalaxyl-M 4% + Mancozeb 64% @ 2.5 g/L must be sprayed at 7-10 day intervals. Destroy infected haulms 10-12 days prior to harvesting to prevent tuber infection during digging.",
+    "citation": "ICAR-CPRI (2022). Compendium of Potato Diseases and Pest Management, ICAR-CPRI Technical Bulletin No. 68, pp. 14-22."
+  },
+  {
+    "doc_id": "ICAR-POT-02",
+    "title": "Early Blight and Target Spot Management in Solanaceous Tubers",
+    "source": "ICAR - Indian Institute of Vegetable Research (IIVR), Varanasi, Advisory 2023",
+    "target_crops": ["Potato"],
+    "disease_covered": "Potato Early Blight",
+    "disease_class": "Potato___Early_blight",
+    "pathogen": "Alternaria solani (Fungus)",
+    "grounded_content": "Early blight produces brown-to-black spots with characteristic concentric rings (target board pattern). The pathogen overwinters in crop debris. Bio-control: Foliar spray of Trichoderma harzianum @ 5 g/L combined with 5% cold-pressed Neem Seed Kernel Extract (NSKE). Chemical control: Apply Chlorothalonil 75% WP @ 2 g/L or Difenoconazole 25% EC @ 0.5 ml/L at initial symptom development. Ensure balanced potassium fertilization to enhance plant cell-wall resistance.",
+    "citation": "ICAR-IIVR (2023). Package of Practices for Vegetable Disease Management, Extension Publication Series IV, pp. 33-37."
+  },
+  {
+    "doc_id": "ICAR-POT-03",
+    "title": "Standard Cultural Practices for Disease-Free Healthy Potato Production",
+    "source": "ICAR - Directorate of Seed Research, Technical Advisory Note",
+    "target_crops": ["Potato"],
+    "disease_covered": "Healthy Potato",
+    "disease_class": "Potato___healthy",
+    "pathogen": "None (Healthy Crop)",
+    "grounded_content": "Maintain earthing-up to a height of 15-20 cm to prevent sunlight exposure and greening of tubers. Implement drip irrigation to maintain 65-70% available soil moisture while keeping foliage completely dry. Apply well-decomposed Farmyard Manure (FYM) @ 20-25 tonnes/ha enriched with Trichoderma viride @ 2.5 kg/ha to maintain soil microbial equilibrium and suppress soil-borne pathogens.",
+    "citation": "ICAR (2021). Good Agricultural Practices (GAP) for Tuber Crops, ICAR Guidelines 2021."
+  },
+  {
+    "doc_id": "ICAR-TOM-01",
+    "title": "Tomato Late Blight and Fruit Rot Emergency Action Protocol",
+    "source": "ICAR - Indian Agricultural Research Institute (IARI), Division of Plant Pathology",
+    "target_crops": ["Tomato"],
+    "disease_covered": "Tomato Late Blight",
+    "disease_class": "Tomato___Late_blight",
+    "pathogen": "Phytophthora infestans",
+    "grounded_content": "Tomato late blight causes greasy, water-soaked foliar lesions and dark, leathery fruit rot. For bio-protection, apply Copper Hydroxide 53.8% DF @ 2.0 g/L or Bordeaux Mixture (1%). Under severe epidemic conditions, spray Famoxadone 16.6% + Cymoxanil 22.1% SC @ 1.0 ml/L or Dimethomorph 50% WP @ 1.0 g/L. Maintain a Pre-Harvest Interval (PHI) of 3 days. Prune lower canopy foliage touching soil and ensure 60 cm row-to-row spacing for rapid leaf drying.",
+    "citation": "ICAR-IARI (2023). Emergency Protocol for Solanaceous Blight Outbreaks, IARI Crop Bulletin No. 44."
+  },
+  {
+    "doc_id": "ICAR-TOM-02",
+    "title": "Integrated Management of Tomato Early Blight and Alternaria Spot",
+    "source": "ICAR - National Research Centre for Integrated Pest Management (NCIPM), New Delhi",
+    "target_crops": ["Tomato"],
+    "disease_covered": "Tomato Early Blight",
+    "disease_class": "Tomato___Early_blight",
+    "pathogen": "Alternaria linariae / solani",
+    "grounded_content": "Early blight targets older senescent leaves first, creating dark brown concentric lesions. Management strategy: 1) Prune bottom 30 cm of foliage to eliminate soil-splash inoculum. 2) Apply bio-agent Pseudomonas fluorescens 1.0% WP @ 5 g/L. 3) Chemical intervention: Spray Azoxystrobin 18.2% + Difenoconazole 11.4% SC @ 1.0 ml/L or Mancozeb 75 WP @ 2.5 g/L at 10-day intervals. Avoid overhead sprinklers.",
+    "citation": "ICAR-NCIPM (2023). IPM Package for Tomato Cultivation, NCIPM Technical Monograph 12."
+  },
+  {
+    "doc_id": "ICAR-TOM-03",
+    "title": "Bacterial Spot and Canker Management in Commercial Tomato",
+    "source": "CIBRC & ICAR-IIHR Vegetable Pathology Division, Bengaluru",
+    "target_crops": ["Tomato"],
+    "disease_covered": "Tomato Bacterial Spot",
+    "disease_class": "Tomato___Bacterial_spot",
+    "pathogen": "Xanthomonas perforans / euvesicatoria (Bacterium)",
+    "grounded_content": "Bacterial spot produces small (1-3 mm) dark, water-soaked angular spots with yellow halos on foliage and raised scabby pustules on fruit. Copper resistance is common; hence, apply Copper Oxychloride 50 WP @ 2.5 g/L combined with Streptomycin Sulphate + Tetracycline Hydrochloride (90:10 formulation) @ 1.0 g per 10 L of water. Disinfect stakes, pruning shears, and nursery trays with 1% Sodium Hypochlorite.",
+    "citation": "ICAR-IIHR (2022). Diagnosis and Management of Bacterial Diseases in Vegetables, Technical Manual No. 29."
+  },
+  {
+    "doc_id": "ICAR-TOM-04",
+    "title": "Nutrient and Canopy Hygiene Protocol for Disease-Free Tomatoes",
+    "source": "ICAR - Indian Institute of Horticultural Research (IIHR), Bengaluru",
+    "target_crops": ["Tomato"],
+    "disease_covered": "Healthy Tomato",
+    "disease_class": "Tomato___healthy",
+    "pathogen": "None (Optimal Vigor)",
+    "grounded_content": "Maintain uniform soil moisture using drip irrigation to prevent physiological blossom end rot. Support vines on trellises and prune axillary suckers on dry sunny mornings. Apply micronutrient foliar spray (Zinc, Boron, Calcium) at flowering stage @ 2 g/L. Mulch beds with 25-micron silver-black polyethylene or organic paddy straw to suppress weed competition and soil splash.",
+    "citation": "ICAR-IIHR (2023). Precision Horticulture Guide for Solanaceous Crops, Bulletin No. 51."
+  },
+  {
+    "doc_id": "ICAR-CORN-01",
+    "title": "Management of Common Rust and Polysora Rust in Maize Ecosystems",
+    "source": "ICAR - Indian Institute of Maize Research (IIMR), Ludhiana",
+    "target_crops": ["Corn (Maize)"],
+    "disease_covered": "Corn Common Rust",
+    "disease_class": "Corn___Common_rust",
+    "pathogen": "Puccinia sorghi (Fungus)",
+    "grounded_content": "Common rust appears as small, powdery cinnamon-brown uredinial pustules on both leaf surfaces. Spores are wind-borne and thrive at 16-23°C with prolonged dew. Spray 5% Neem Seed Kernel Extract or fermented butter milk (1:10 dilution) in early stages. For chemical control: Apply Mancozeb 75% WP @ 2.5 g/L or Azoxystrobin 23% SC @ 1.0 ml/L at the first appearance of pustules. Plant resistant hybrids such as PMH-1, HQPM-1, or Bio-9681.",
+    "citation": "ICAR-IIMR (2023). Maize Disease Compendium & Protection Strategies, IIMR Tech Bulletin 19, pp. 28-34."
+  },
+  {
+    "doc_id": "ICAR-CORN-02",
+    "title": "Control Strategies for Turcicum Leaf Blight / Northern Corn Leaf Blight",
+    "source": "ICAR - Indian Institute of Maize Research (IIMR), Ludhiana",
+    "target_crops": ["Corn (Maize)"],
+    "disease_covered": "Northern Corn Leaf Blight",
+    "disease_class": "Corn___Northern_Leaf_Blight",
+    "pathogen": "Exserohilum turcicum (Fungus)",
+    "grounded_content": "Northern leaf blight produces elongated, elliptical, grayish-green to tan lesions (spindle-shaped, 3-15 cm long). Severe infection causes premature defoliation and up to 50% grain yield reduction. Control: 1) Seed treatment with Thiram @ 3 g/kg seed. 2) Foliar spray with Propiconazole 25% EC @ 1.0 ml/L or Chlorothalonil 75% WP @ 2.0 g/L at knee-high stage and repeat at tasseling if wet weather persists. Deep ploughing of infected stubble post-harvest.",
+    "citation": "ICAR-IIMR (2022). Package of Practices for Kharif and Rabi Maize, IIMR Extension Monograph 08."
+  },
+  {
+    "doc_id": "ICAR-CORN-03",
+    "title": "Cercospora and Gray Leaf Spot Management in Maize",
+    "source": "ICAR - Directorate of Maize Research, Technical Note",
+    "target_crops": ["Corn (Maize)"],
+    "disease_covered": "Corn Cercospora Leaf Spot",
+    "disease_class": "Corn___Cercospora_leaf_spot",
+    "pathogen": "Cercospora zeae-maydis",
+    "grounded_content": "Gray leaf spot causes rectangular, vein-bounded lesions that turn gray to tan. The fungus overwinters in corn residue. Management: Practice 2-year crop rotation with non-host legumes (Soybean, Cowpea). Chemical control: Apply Pyraclostrobin 20% WG @ 1.0 g/L or Azoxystrobin + Difenoconazole @ 1.0 ml/L. Ensure optimal plant spacing (60 x 20 cm) to avoid high micro-canopy humidity.",
+    "citation": "ICAR (2023). Integrated Pest and Disease Management in Cereal Crops, ICAR Manual Series 2023."
+  },
+  {
+    "doc_id": "ICAR-CORN-04",
+    "title": "Agronomic Best Practices for High-Yield Disease-Free Maize",
+    "source": "ICAR - Indian Institute of Maize Research (IIMR)",
+    "target_crops": ["Corn (Maize)"],
+    "disease_covered": "Healthy Maize",
+    "disease_class": "Corn___healthy",
+    "pathogen": "None (Healthy Crop)",
+    "grounded_content": "Maintain balanced NPK ratio (120:60:40 kg/ha) with split nitrogen application (1/3 at sowing, 1/3 at knee-high stage, 1/3 at tasseling). Apply Zinc Sulphate @ 25 kg/ha basal to avoid interveinal chlorosis. Monitor fields weekly with pheromone traps for early Fall Armyworm detection. Keep fields weed-free during the critical first 45 days after sowing.",
+    "citation": "ICAR-IIMR (2023). Standard Agronomic Protocols for Grain and Silage Corn, Bulletin No. 15."
+  },
+  {
+    "doc_id": "ICAR-APP-01",
+    "title": "Apple Scab Management and Spore Eradication Schedule",
+    "source": "ICAR - Central Institute of Temperate Horticulture (CITH), Srinagar",
+    "target_crops": ["Apple"],
+    "disease_covered": "Apple Scab",
+    "disease_class": "Apple___Apple_scab",
+    "pathogen": "Venturia inaequalis (Ascomycete fungus)",
+    "grounded_content": "Apple scab causes olive-green to black velvety spots on leaves and scabby, deformed fruit lesions. Primary infection occurs during spring bud break from overwintered ascospores in fallen leaves. Spray Schedule: 1) Silver tip stage: Captan 50 WP @ 2.5 g/L or Mancozeb 75 WP @ 3.0 g/L. 2) Pink bud stage: Difenoconazole 25 EC @ 0.3 ml/L or Dodine 65 WP @ 0.75 g/L. 3) Post-harvest autumn: Spray 5% Urea on orchard floor to accelerate leaf decomposition and eliminate 90% overwintering inoculum.",
+    "citation": "ICAR-CITH (2023). Integrated Disease Management in Temperate Fruits, CITH Technical Bulletin No. 41."
+  },
+  {
+    "doc_id": "ICAR-APP-02",
+    "title": "Apple Black Rot and Canker Control Measures",
+    "source": "ICAR - Central Institute of Temperate Horticulture (CITH)",
+    "target_crops": ["Apple"],
+    "disease_covered": "Apple Black Rot",
+    "disease_class": "Apple___Black_rot",
+    "pathogen": "Botryosphaeria obtusa",
+    "grounded_content": "Black rot (frogeye leaf spot) causes purple specks that enlarge into concentric rings with brown centers. Can cause severe cankers and mummified fruit. Management: 1) Prune all dead and infected wood 15 cm below visible cankers during winter dormancy and burn cuttings immediately. 2) Paint pruning wounds with Chaubattia paste (Copper carbonate + Red lead + Linseed oil in 1:1:1.25 ratio). 3) Apply Thiophanate Methyl 70 WP @ 1.0 g/L at petal fall.",
+    "citation": "ICAR-CITH (2022). Deciduous Orchard Health and Pathology Guidelines, Bulletin No. 34."
+  },
+  {
+    "doc_id": "ICAR-APP-03",
+    "title": "Cedar Apple Rust Prevention and Barrier Protocol",
+    "source": "ICAR - National Bureau of Plant Genetic Resources (NBPGR) & CITH",
+    "target_crops": ["Apple"],
+    "disease_covered": "Cedar Apple Rust",
+    "disease_class": "Apple___Cedar_apple_rust",
+    "pathogen": "Gymnosporangium juniperi-virginianae",
+    "grounded_content": "Heteroecious rust requiring both apple and cedar/juniper hosts to complete its life cycle. On apple, produces yellow-orange spots on upper leaf surfaces and aecia tubes beneath. Control: Remove red cedar/juniper galls within 500 meters of orchards. Apply wettable sulfur 80% WDG @ 3.0 g/L or Myclobutanil 10% WP @ 0.5 g/L at pink bud and petal fall stages. Plant rust-tolerant varieties like Enterprise, Liberty, or Prima.",
+    "citation": "ICAR (2022). Rust Fungi in Horticultural Ecosystems, CITH Compendium Series 2022."
+  },
+  {
+    "doc_id": "ICAR-APP-04",
+    "title": "Canopy Vigor and Soil Maintenance in Organic Apple Orchards",
+    "source": "ICAR - Central Institute of Temperate Horticulture (CITH)",
+    "target_crops": ["Apple"],
+    "disease_covered": "Healthy Apple",
+    "disease_class": "Apple___healthy",
+    "pathogen": "None (Healthy Orchard)",
+    "grounded_content": "Maintain open center or modified central leader tree architecture to ensure sunlight penetration to inner spurs. Apply well-rotted sheep/cow manure @ 30-40 kg/tree along with bio-fertilizers (Azotobacter, Phosphobacteria) @ 50 g/tree during dormancy. Mulch tree basins with dry pine needles or grass to conserve moisture and suppress orchard floor weeds.",
+    "citation": "ICAR-CITH (2023). Organic Apple Production Technology, Extension Pamphlet No. 18."
+  },
+  {
+    "doc_id": "CIBRC-IPM-GEN",
+    "title": "National Standards for Bio-Pesticide Preparation and Safe Chemical Application",
+    "source": "Central Insecticides Board & Registration Committee (CIBRC), Ministry of Agriculture & Farmers Welfare, Govt of India",
+    "target_crops": ["Apple", "Corn", "Potato", "Tomato"],
+    "disease_covered": "General Pest & Disease Management",
+    "disease_class": "General_IPM",
+    "pathogen": "Broad-spectrum Fungal & Bacterial Pathogens",
+    "grounded_content": "1) Neem Seed Kernel Extract (NSKE 5%): Pound 50 g of good quality dried neem seed kernels into a fine powder. Soak overnight in 1 L of water. Strain through muslin cloth and add 1 g of detergent or soap powder before spraying. 2) Trichoderma viride / harzianum: Mix 5-10 g of 1% WP formulation in 1 L water. Apply during evening hours to avoid UV inactivation. 3) Chemical safety: Always wear personal protective equipment (PPE), observe strict Pre-Harvest Intervals (PHI), and rotate fungicide chemical groups (FRAC codes) to prevent pathogen resistance.",
+    "citation": "CIBRC (2023). Integrated Pest Management Standards & Safe Pesticide Use Manual, Govt of India Gazette Publication."
+  }
+]

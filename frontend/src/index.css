@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  --bg-beige: #fbf8f3;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #f5efe6;
+  --border-sand: #e6dcce;
+  
+  --terracotta: #c67d63;
+  --terracotta-hover: #b46b52;
+  --sage-green: #7a8b75;
+  --warm-gold: #d9b48f;
+  
+  --text-dark: #3a3532;
+  --text-muted: #827a74;
+  --text-light: #655e58;
+  
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-beige);
+  color: var(--text-dark);
+  min-height: 100vh;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(225, 205, 185, 0.25) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(122, 139, 117, 0.15) 0%, transparent 45%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Warm Earthen Cards */
+.warm-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-sand);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(180, 150, 120, 0.08);
+  transition: all 0.25s ease;
+}
+
+.warm-card:hover {
+  box-shadow: 0 14px 40px rgba(180, 150, 120, 0.14);
+}
+
+.warm-card-sm {
+  background: var(--bg-card-subtle);
+  border: 1px solid var(--border-sand);
+  border-radius: 18px;
+  padding: 20px;
+}
+
+/* Pill Buttons matching attached screenshot */
+.btn-pill-primary {
+  background: linear-gradient(135deg, var(--terracotta) 0%, #b46b52 100%);
+  color: #ffffff;
+  font-weight: 600;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 16px rgba(198, 125, 99, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-pill-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(198, 125, 99, 0.45);
+}
+
+.btn-pill-secondary {
+  background: var(--bg-card-subtle);
+  color: var(--text-dark);
+  font-weight: 600;
+  border: 1px solid var(--border-sand);
+  padding: 12px 28px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.btn-pill-secondary:hover {
+  background: #ede4d6;
+  transform: translateY(-1px);
+}
+
+/* Aesthetic Badge Pills */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.badge-healthy {
+  background: rgba(122, 139, 117, 0.15);
+  color: #556650;
+  border: 1px solid rgba(122, 139, 117, 0.4);
+}
+
+.badge-disease {
+  background: rgba(198, 125, 99, 0.15);
+  color: #a85238;
+  border: 1px solid rgba(198, 125, 99, 0.4);
+}
+
+.badge-tag {
+  background: rgba(217, 180, 143, 0.2);
+  color: #8c633a;
+  border: 1px solid rgba(217, 180, 143, 0.5);
+  border-radius: 50px;
+  padding: 4px 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* Progress Bar */
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background: #e6dcce;
+  border-radius: 50px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--terracotta) 0%, #d99279 100%);
+  border-radius: 50px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-beige);
+}
+::-webkit-scrollbar-thumb {
+  background: #d8cbba;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--terracotta);
+}
