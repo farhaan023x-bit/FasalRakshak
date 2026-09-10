@@ -137,12 +137,30 @@ class LocalAgriLLM:
             agency = doc.get("source", "Indian Council of Agricultural Research")
 
             if is_hindi:
+                # If disease_class is provided, try looking up localized remedy dictionary first
+                local_remedy = ""
+                if disease_class and disease_class in self._advisory_data:
+                    info = self._advisory_data[disease_class]
+                    org = info.get("organic_treatment", "")
+                    chem = info.get("chemical_treatment", "")
+                    prev = info.get("prevention", "")
+                    local_remedy = (
+                        f"🌱 **जैविक उपचार:** {org}\n"
+                        f"🧪 **रासायनिक उपचार:** {chem}\n"
+                        f"🛡️ **बचाव एवं रोकथाम:** {prev}"
+                    )
+                if not local_remedy:
+                    local_remedy = (
+                        "🌱 **उपचार की सलाह:** 5% नीम तेल (NSKE) या ट्राइकोडर्मा जैविक कवकनाशी (5 ग्राम/लीटर) का छिड़काव करें।\n"
+                        "⚠️ **सावधानी:** छिड़काव करते समय दस्ताने और मास्क पहनें। शाम या सुबह के समय छिड़काव करें।"
+                    )
+
                 return (
                     f"🌾 **कृषि विशेषज्ञ सलाह ({title}):**\n\n"
-                    f"{content}\n\n"
+                    f"{local_remedy}\n\n"
                     f"• **प्रमाणित स्रोत:** {agency}\n"
                     f"• **संदर्भ:** {citation}\n"
-                    f"• **विशेष सुझाव:** किसी भी लक्षण के बढ़ने पर निकटतम कृषि विज्ञान केंद्र (KVK) से संपर्क करें।"
+                    f"• **विशेष सुझाव:** किसी भी लक्षण के बढ़ने पर नजदीकी कृषि विज्ञान केंद्र (KVK) से संपर्क करें।"
                 )
             else:
                 return (

@@ -241,7 +241,14 @@ def agro_bot_chat(req: AgroBotChatRequest):
         "language": lang
     }
 
-# New RAG‑enabled chat endpoint using IBM watsonx.ai Granite model
+def normalize_language(lang_str: Optional[str]) -> str:
+    if not lang_str:
+        return "Hindi"
+    clean = lang_str.split("(")[0].strip()
+    return clean if clean else "Hindi"
+
+
+# New RAG‑enabled chat endpoint using Google Gemini model
 class AgriChatRequest(BaseModel):
     message: str
     disease_class: Optional[str] = None
@@ -249,77 +256,111 @@ class AgriChatRequest(BaseModel):
 
 @app.post("/api/agri-chat")
 def agri_chat(req: AgriChatRequest):
-    """RAG‑augmented chat using IBM watsonx Granite.
+    """RAG‑augmented chat using Google Gemini.
     Returns a generated answer in the requested language.
     """
+    target_language = normalize_language(req.language)
+
     # Ensure Gemini API key is available
     gemini_api_key = os.getenv("GEMINI_API_KEY")
     if not gemini_api_key:
         import warnings
         warnings.warn("Gemini API key missing in .env. Using dummy key for testing.")
-    # Allow missing GEMINI_API_KEY for local testing; use dummy value
     genai.configure(api_key=gemini_api_key or "DUMMY_KEY")
 
     # Quick reply for simple greetings to avoid lengthy IPM output
-    greeting_keywords = {"hi", "hii", "hello", "hey", "namaste"}
-    # Remove surrounding punctuation and whitespace, then check the first token
+    greeting_keywords = {"hi", "hii", "hello", "hey", "namaste", "नमस्ते", "प्रणाम"}
     cleaned_msg = req.message.strip().lower().strip("?.!,.")
     first_token = cleaned_msg.split()[0] if cleaned_msg else ""
     if first_token in greeting_keywords:
-        short_reply = "Namaste! How can I assist you with your agriculture queries today?"
+        if target_language.lower() in ["hindi", "khortha", "nagpuri", "bhojpuri"]:
+            short_reply = "नमस्ते! मैं फसल रक्षक एआई कृषि सहायक हूँ। आज मैं आपकी फसल, बीमारी या कीट नियंत्रण में क्या सहायता कर सकता हूँ?"
+        else:
+            short_reply = f"Namaste! I am FasalRakshak AI Agricultural Assistant. How can I assist you with your farming queries in {target_language} today?"
         return {"answer": short_reply, "retrieved": {}, "success": True}
 
     # Initialize RAG engine
     rag = advisory_engine.rag_engine
     if req.disease_class:
         disease_cls = req.disease_class
-        rag_data = rag.generate_grounded_advisory(disease_cls, query=req.message, language=req.language)
+        rag_data = rag.generate_grounded_advisory(disease_cls, query=req.message, language=target_language)
         context_text = rag_data.get("full_grounded_content", "")
     else:
         rag_data = {}
         context_text = ""
 
+    # Build system instruction for Gemini with explicit language enforcement
+    if target_language.lower() in ["hindi", "khortha", "nagpuri", "bhojpuri"]:
+        lang_rule_instruction = (
+            "If the selected language is Hindi (or Devanagari regional dialect):\n"
+            "- Write your ENTIRE response ONLY in Hindi using Devanagari script.\n"
+            "- Use simple, clear Hindi suitable for ordinary Indian farmers.\n"
+            "- Do NOT write English sentences or English paragraphs.\n"
+            "- Do NOT unnecessarily mix Hindi and English.\n"
+            "- Keep scientific names, chemical names, product names, disease names, abbreviations (e.g., NPK, NSKE, KVK, pH), and other internationally recognized technical names in their standard form in parentheses only when necessary.\n"
+            "- Explain technical terms in simple Hindi.\n"
+            "- All headings (such as '🌱 उपचार की सलाह', '⚠️ सावधानी', 'क्या करें', 'क्या न करें'), explanations, treatment steps, precautions, warnings, recommendations, and conclusions MUST be in Hindi.\n"
+        )
+    elif target_language.lower() == "english":
+        lang_rule_instruction = (
+            "If the selected language is English:\n"
+            "- Respond only in clear, simple, and practical English.\n"
+        )
+    else:
+        lang_rule_instruction = (
+            f"For {target_language}:\n"
+            f"- Respond ENTIRELY in {target_language} using its native script.\n"
+            f"- Do not provide an English version.\n"
+        )
 
-    # Build system instruction for Gemini
     system_instruction = (
-        f"You are an expert Indian agricultural extension officer. "
-        f"Provide detailed, practical, and structured advice for the user's query. "
-        f"Answer in the language requested (English, Hindi, or Hinglish). "
-        f"Use the provided context only if it is relevant; otherwise rely on your knowledge. "
-        f"Do NOT fabricate live data such as current market prices, weather, or government schemes. "
-        f"If such data is unavailable, explicitly state that verified data is required. "
-        f"Your response should be comprehensive, not a single‑line generic answer."
+        f"You are FasalRakshak, an AI agricultural advisor for Indian farmers.\n\n"
+        f"The farmer has selected the following response language: {target_language}\n\n"
+        f"LANGUAGE RULE — VERY IMPORTANT:\n"
+        f"Your entire response MUST be written in the selected language ({target_language}).\n\n"
+        f"{lang_rule_instruction}\n"
+        f"Do NOT provide an English version unless the selected language is English.\n"
+        f"Do NOT fabricate live data such as current market prices, weather, or government schemes without verification."
     )
 
-    # Gemini expects a list of contents (strings or parts). First element is context, second is user query.
-    gemini_contents = [context_text, req.message]
+    user_prompt = (
+        f"Farmer's question:\n{req.message}\n\n"
+        f"Crop/Disease context:\n{req.disease_class or 'General Agricultural Query'}\n\n"
+        f"Reference Agricultural Grounding Data:\n{context_text}\n\n"
+        f"Give a concise, practical, structured, and safe agricultural advisory written ENTIRELY in {target_language}."
+    )
+
+    gemini_contents = [user_prompt]
 
     answer = None
     if gemini_api_key and gemini_api_key != "DUMMY_KEY":
-        try:
-            model = genai.GenerativeModel(
-                "gemini-3.6-flash",
-                system_instruction=system_instruction,
-            )
-            response = model.generate_content(
-                gemini_contents,
-                generation_config=genai.GenerationConfig(
-                    temperature=0.3,
-                    max_output_tokens=4000,
-                ),
-                request_options={"timeout": 4.0},
-            )
-            if response and hasattr(response, "text") and response.text:
-                answer = response.text
-        except Exception as e:
-            print(f"[AgroBot LLM Note] Cloud LLM offline/timeout ({e}), switching to local Agronomic LLM.")
+        candidate_models = ["gemini-3.6-flash", "gemini-3.5-flash", "gemini-flash-latest"]
+        for model_name in candidate_models:
+            try:
+                model = genai.GenerativeModel(
+                    model_name,
+                    system_instruction=system_instruction,
+                )
+                response = model.generate_content(
+                    gemini_contents,
+                    generation_config=genai.GenerationConfig(
+                        temperature=0.3,
+                        max_output_tokens=4000,
+                    ),
+                    request_options={"timeout": 8.0},
+                )
+                if response and hasattr(response, "text") and response.text:
+                    answer = response.text
+                    break
+            except Exception as e:
+                print(f"[AgroBot LLM Note] Model {model_name} offline/rate-limited ({e}), attempting fallback model...")
 
     # Grounded Local LLM Fallback (Guarantees zero downtime and 100% offline functionality)
     if not answer or not answer.strip():
         answer = local_llm.generate_answer(
             query=req.message,
             disease_class=req.disease_class,
-            language=req.language or "Hindi"
+            language=target_language
         )
 
     return {

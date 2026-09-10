@@ -9,16 +9,29 @@ Includes:
 
 import numpy as np
 from PIL import Image
-import torch
-import torch.nn.functional as F
+
+try:
+    import torch
+    import torch.nn.functional as F
+    TORCH_AVAILABLE = True
+except ImportError:
+    torch = None
+    F = None
+    TORCH_AVAILABLE = False
+
 from pathlib import Path
 import sys
 
 sys.path.append(str(Path(__file__).resolve().parent.parent))
 import config
-from src.dataset import VAL_TRANSFORMS
-from src.model import build_model
-from src.gradcam import compute_gradcam_overlay
+try:
+    from src.dataset import VAL_TRANSFORMS
+    from src.model import build_model
+    from src.gradcam import compute_gradcam_overlay
+except ImportError:
+    VAL_TRANSFORMS = None
+    build_model = None
+    compute_gradcam_overlay = None
 
 
 def is_valid_plant_leaf(image: Image.Image) -> tuple[bool, str]:
@@ -70,6 +83,10 @@ class DiseasePredictor:
     CONFIDENCE_THRESHOLD = 65.0
 
     def __init__(self, model_path=None):
+        if not TORCH_AVAILABLE or build_model is None:
+            self.device = "cpu"
+            self.model = None
+            return
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.model = build_model(pretrained=False)
 
