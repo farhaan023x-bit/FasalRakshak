@@ -58,6 +58,14 @@ advisory_engine = FarmerAdvisoryEngine()
 inworld_voice_engine = InworldVoiceEngine()
 
 
+@app.post("/api/reload-model")
+def reload_model():
+    """Dynamically reloads model weights into memory."""
+    global predictor
+    predictor = DiseasePredictor(model_path=config.MODEL_SAVE_PATH)
+    return {"status": "success", "message": "Model reloaded successfully."}
+
+
 class InworldVoiceRequest(BaseModel):
     text: str
     language: Optional[str] = "Hindi"
@@ -333,7 +341,17 @@ def agri_chat(req: AgriChatRequest):
     gemini_contents = [user_prompt]
 
     answer = None
+    # Quick probe: verify internet reachability before attempting cloud Gemini API calls
+    has_internet = False
     if gemini_api_key and gemini_api_key != "DUMMY_KEY":
+        try:
+            import socket
+            socket.create_connection(("8.8.8.8", 53), timeout=1.0)
+            has_internet = True
+        except OSError:
+            has_internet = False
+
+    if has_internet:
         candidate_models = ["gemini-3.6-flash", "gemini-3.5-flash", "gemini-flash-latest"]
         for model_name in candidate_models:
             try:
